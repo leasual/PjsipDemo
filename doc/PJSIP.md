@@ -4,6 +4,8 @@ PJSIP开源库中主要包含两部分，一部分是SIP协议栈（SIP消息处
 
 ### SIP协议栈模块
 
+SIP(Session Initiation Protocol)会话发起协议，负责发起会话，但不负责发起后的会话的控制和描述。
+
  SIP协议栈这个模块，开源库由底层往上层做了各个层次的封装。
 
 ![](.\png\pjsip.png)
@@ -15,6 +17,14 @@ PJSIP开源库中主要包含两部分，一部分是SIP协议栈（SIP消息处
 - pjlib-util
 
   封装了一些常用的算法，例如MD5、CRC32等，除此之外封装了一些涉及到字符串、文件格式解析操作的API，例如XML格式解析。
+
+- pjnath
+
+  开源的 NAT-T 辅助库
+
+- PJMEDIA
+
+  开源的媒体栈
 
 - pjsip-core
 

@@ -1,0 +1,203 @@
+## PJSIP Datasheet =
+
+
+### Operating Systems Supported
+
+- Mac OS X
+- Windows (32 and 64bit), including Windows 10
+- Linux/uClinux
+- Smartphones:
+- iOS
+- Android
+- Windows !Mobile/Windows CE
+- Windows Phone 10/Universal Windows Platform (UWP)
+- !BlackBerry (BB10)
+- Symbian S60 3rd Edition and 5th Edition
+- Community supported:
+- OpenBSD
+- FreeBSD
+- Solaris
+- MinGW
+- RTEMS
+
+### SIP Capabilities
+
+#### Base specs:
+- Core methods: [http://tools.ietf.org/html/rfc3261 RFC 3261]: INVITE, CANCEL, BYE, REGISTER, OPTIONS, INFO
+- Digest authentication ([http://tools.ietf.org/html/rfc2617 RFC 2617])
+#### Transports:
+- UDP, TCP, TLS (server or mutual)
+- DNS SRV resolution ([http://tools.ietf.org/html/rfc3263 RFC 3263])
+- IPv6
+  * [wiki:QoS  QoS] (DSCP, WMM)
+ * Routing/NAT:
+  * rport ([http://tools.ietf.org/html/rfc3581 RFC 3581])
+  * Service-Route header ([http://tools.ietf.org/html/rfc3608 RFC 3608])
+  * SIP outbound for TCP/TLS ([http://tools.ietf.org/html/rfc5626 RFC 5626])
+  * Path header (with SIP outbound) ([http://tools.ietf.org/html/rfc3327 RFC 3327]) 
+ * Call:
+  * Offer/answer ([http://tools.ietf.org/html/rfc3264 RFC 3264])
+  * hold, unhold
+  * [wiki:SIP_Redirection redirection]
+  * transfer/REFER (attended and unattended):
+   * Base ([http://tools.ietf.org/html/rfc3515 RFC 3515])
+   * replaces ([http://tools.ietf.org/html/rfc3891 RFC 3891])
+   * Referred-by ([http://tools.ietf.org/html/rfc3892 RFC 3892])
+  * sipfrag support ([http://tools.ietf.org/html/rfc3420 RFC 3420])
+  * norefersub ([http://tools.ietf.org/html/rfc4488 RFC 4488])
+  * UPDATE ([http://tools.ietf.org/html/rfc3311 RFC 3311])
+  * 100rel/PRACK ([http://tools.ietf.org/html/rfc3262 RFC 3262])
+  * tel: URI ([http://tools.ietf.org/html/rfc3966 RFC 3966])
+  * Session Timers ([http://tools.ietf.org/html/rfc4028 RFC 4028])
+  * Reason header ([http://tools.ietf.org/html/rfc3326 RFC 3326], [https://trac.pjsip.org/repos/wiki/FAQ#custom-header partially supported])
+  * P-Header ([http://tools.ietf.org/html/rfc3325 RFC 3325], [https://trac.pjsip.org/repos/wiki/FAQ#custom-header partially supported])
+ * SDP:
+  * [http://tools.ietf.org/html/rfc2327 RFC 2327] (obsoleted by [http://tools.ietf.org/html/rfc4566 RFC 4566])
+  * RTCP attribute ([http://tools.ietf.org/html/rfc3605 RFC 3605])
+  * IPv6 support ([http://tools.ietf.org/html/rfc3266 RFC 3266])
+ * Multipart ([http://tools.ietf.org/html/rfc2046 RFC 2046], [http://tools.ietf.org/html/rfc5621 RFC 5621])
+ * Presence and IM:
+  * Event framework (SUBSCRIBE, NOTIFY) ([http://tools.ietf.org/html/rfc3265 RFC 3265])
+  * Event publication (PUBLISH) ([http://tools.ietf.org/html/rfc3903 RFC 3903])
+  * MESSAGE ([http://tools.ietf.org/html/rfc3428 RFC 3428])
+  * typing indication ([http://tools.ietf.org/html/rfc3994 RFC 3994])
+  * pidf+xml ([http://tools.ietf.org/html/rfc3856 RFC 3856], [http://tools.ietf.org/html/rfc3863 RFC 3863])
+  * xpidf+xml
+  * RPID (subset) ([http://tools.ietf.org/html/rfc4480 RFC 4480])
+ * Other extensions:
+  * INFO ([http://tools.ietf.org/html/rfc2976 RFC 2976])
+  * AKA, AKA-v2 authentication ([http://tools.ietf.org/html/rfc3310 RFC 3310], [http://tools.ietf.org/html/rfc4169 RFC 4169])
+  * ICE option tag ([http://tools.ietf.org/html/rfc5768 RFC 5768])
+  * [https://trac.pjsip.org/repos/ticket/982 Message summary/message waiting indication] (MWI, [http://tools.ietf.org/html/rfc3842 RFC 3842])
+ * Compliance, best current practices:
+  * Issues with Non-INVITE transaction ([http://tools.ietf.org/html/rfc4320 RFC 4320])
+  * Issues with INVITE transaction ([http://tools.ietf.org/html/rfc4321 RFC 4321])
+  * Multiple dialog usages ([http://tools.ietf.org/html/rfc5057 RFC 5057])
+  * SIP torture messages ([http://tools.ietf.org/html/rfc4475 RFC 4475], tested when applicable)
+  * SIP torture for IPv6 ([http://tools.ietf.org/html/rfc5118 RFC 5118])
+  * Message Body Handling ([http://tools.ietf.org/html/rfc5621 RFC 5621]. Partial compliance: multipart is supported, but ''Content-Disposition'' header is not handled)
+  * The use of SIPS ([http://tools.ietf.org/html/rfc5630 RFC 5630]. Partial compliance: SIPS is supported, but still make use of ''transport=tls'' parameter)
+
+== NAT Traversal ==
+
+ * STUN:
+  * [http://tools.ietf.org/html/rfc5389 RFC 5389]
+  * Some [http://tools.ietf.org/html/rfc3489 RFC 3489] compatibility
+  * DNS SRV resolution
+  * short/long term authentication
+  * fingerprinting
+ * TURN:
+  * [http://tools.ietf.org/html/rfc5766 RFC 5766]
+  * DNS SRV resolution
+  * UDP and TCP client connection
+  * TCP allocations ([http://tools.ietf.org/html/rfc6062 RFC 6062])
+ * ICE:
+  * [http://tools.ietf.org/html/rfc5245 RFC 5245]
+  * host, srflx, and relayed candidates
+  * aggressive and regular nomination
+  * ICE option tag ([http://tools.ietf.org/html/rfc5768 RFC 5768])
+ * NAT type detection:
+  * legacy [http://tools.ietf.org/html/rfc3489 RFC 3489]
+ * Other:
+  * [wiki:QoS  QoS] support on sockets (DSCP, WMM)
+
+
+}}}
+
+{{{
+#!div style="float: right; width:45%;"
+
+== Media/audio capabilities ==
+
+ * Core:
+  * any clockrates
+  * N-channels support
+  * zero thread
+ * Base:
+  * DTMF ([http://tools.ietf.org/html/rfc4733 RFC 4733]/[http://tools.ietf.org/html/rfc2833 RFC 2833])
+  * echo cancellation (WebRTC, Speex, suppressor, or native)
+    * Third party acoustic echo cancellation (AEC)
+      * [http://www.voiceinterconnect.de/echo-cancellation.html Echo cancellation software from voice INTER connect]
+      * [http://www.dspalgorithms.com/products/canec.html CANEC from DSP Algorithms]
+      * [http://wavearts.com/licensing/#vqe VQE from Wave Arts]
+      * [http://www.bdsound.com/products/bdimad-for-pjsip.html bdIMAD from bdSound]
+      * [http://www.limesaudio.com/truevoice-acoustic-echo-cancellation-software/ TrueVoice from Limes Audio]
+      * [http://solicall.com/products.html Echo cancellation software from SoliCall]
+  * inband DTMF/tone generation
+  * WAV file playback and recording
+  * WAV file playlist
+  * memory based playback and capture
+  * adaptive jitter buffer
+  * packet lost concealment
+  * clock drift recovery
+ * Audio conferencing (in client)
+ * Flexible media flow management
+ * Audio Codecs:
+  * Bundled:
+   * Speex 8KHz, 16Khz, 32KHz
+   * iLBC, GSM,
+   * L16, G.711A/U (PCMA/PCMU), 
+   * G.722,
+   * G.722.1 16KHz/32KHz (Siren7/Siren14, [http://www.polycom.com/company/about_us/technology/siren14_g7221c/license_agreement.html licensed from Polycom])
+  * with third party libraries (may need additional licensing, please check each codec provider):
+   * [https://www.opus-codec.org Opus] codec (see ticket #1904)
+   * [wiki:Intel_IPP_Codecs Intel IPP]:
+    * AMR-NB, AMR-WB, 
+    * G.722, G.722.1,
+    * G.723.1, G.726, G.728, G.729A,
+   * [https://developer.skype.com/silk SILK] codec (see ticket #1586)
+   * [http://sourceforge.net/projects/opencore-amr/ OpenCore AMR]:
+    * AMR-NB (see ticket #1388)
+    * AMR-WB (see ticket #1608)
+   * [http://www.linphone.org/technical-corner/bcg729/ bcg729]: G.729 (see ticket #2029)
+  * Hardware codecs:
+   * on Nokia with [wiki:Nokia_APS_VAS_Direct APS/VAS-Direct]: AMR-NB, G.729, iLBC, PCMA, PCMU
+   * on iPhone: iLBC
+ * Transports:
+  * RTP and RTCP with media statistic ([http://tools.ietf.org/html/rfc3550 RFC 3550], [http://tools.ietf.org/html/rfc3551 RFC 3551])
+  * RTCP XR (subset, [http://tools.ietf.org/html/rfc3611 RFC 3611])
+  * UDP, STUN, ICE
+  * IPv6 (UDP only)
+  * SRTP ([http://tools.ietf.org/html/rfc3711 RFC 3711]), SRTP SDES ([http://tools.ietf.org/html/rfc4568 RFC 4568]), and DTLS-SRTP ([http://tools.ietf.org/html/rfc5763 RFC 5763])
+  * [wiki:QoS  QoS] (DSCP, WMM)
+  * Symmetric RTP/RTCP ([http://tools.ietf.org/html/rfc4961 RFC 4961])
+  * Third Party
+    * ZRTP
+      * [http://www.zrtp.org/ Zorg]
+      * [https://github.com/wernerd/ZRTP4PJ ZRTP4PJ]
+ * [wiki:Audio_Dev_API Audio devices]:
+  * native WMME (Windows, Windows Mobile)
+  * native ALSA (Linux)
+  * native !CoreAudio (Mac OS X, iPhone) with support for native/hardware EC
+  * OpenSL (Android)
+  * native Symbian MMF (!Symbian/Nokia S60)
+  * native [wiki:APS] (Nokia S60) with hardware EC, and [wiki:Nokia_APS_VAS_Direct APS-Direct] to support hardware codecs
+  * native [wiki:VAS] (Nokia S60) with hardware EC, and [wiki:Nokia_APS_VAS_Direct VAS-Direct] to support hardware codecs
+  * !PortAudio (WMME, !DirectSound, OSS, ALSA, !CoreAudio, etc.)
+
+== Video Media ==
+
+ * Platforms: 
+   - Windows, 
+   - Linux, 
+   - Mac
+   - iOS
+   - Android
+ * Codecs: 
+   - H.263-1998 (ffmpeg)
+   - H.264 ([http://www.openh264.org OpenH264], !VideoToolbox (iOS and Mac), ffmpeg+x264)
+   - VP8 (libvpx)
+   - VP9 (libvpx)
+ * Capture devices: 
+   - colorbar (all platforms)
+   - !DirectShow (Windows)
+   - Video4Linux2 (Linux)
+   - !QuickTime (Mac OS X)
+   - AVFoundation (iOS)
+ * Rendering devices: 
+   - SDL (Windows, Linux, and Mac OS X)
+   - OpenGL ES or UIView (iOS)
+ * Video conferencing (in client)
+ * Flexible media flow management
+
+}}}
