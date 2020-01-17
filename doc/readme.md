@@ -14,22 +14,74 @@
 - OPENH264
 - MediaCodec
 
+## 开发流程
+
+- pjsip 客户端
+
+- 搭建 VOIP 服务器
+
+  配置 server ip
+
+- 搭建 turn 服务器
+
+  stun 无法穿透对称型 NAT，需要用 turn
 
 
-## 开源软件产品
+
+## SIP 学习
+
+- 抓包
+- [IETF](https://www.ietf.org/)
+
+
+
+## SIP开源软件产品
 
 服务端软件
 
 - Asterisk
+
+  标准 C 程序实现，代码清晰。
+
 - SipXecs
+
 - FreeSWITCH
+
 - OpenSIPS
+
+- MiniSipServer
 
 客户端软件
 
 - X-lite
 - LinPhone
 - eysBeam
+
+
+
+## STUN TURN Server
+
+### 免费的
+
+- [restund](http://www.creytiv.com/restund.html)
+
+- [rfc5766-turn-server](https://github.com/coturn/rfc5766-turn-server/)
+
+  支持 STUN、TURN
+
+- [PJSIP](http://www.pjsip.org)
+
+  支持 STUN、TURN、ICE
+
+- [libnice](https://nice.freedesktop.org.wiki/)
+
+  支持 ICE 和 STUN
+
+- [STUNMAN](http://www.stunprotocol.org)
+
+### 开源的
+
+
 
 
 
@@ -185,12 +237,6 @@
 - MobiCent
 - Ernie
 - SIP Thor
-
-
-
-
-
-
 
 
 

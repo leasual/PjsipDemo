@@ -106,6 +106,10 @@ void MyCall::onCallState(OnCallStateParam &prm)
     }
 }
 
+/*
+	呼叫
+*/
+
 static void mainProg1(Endpoint &ep) throw(Error)
 {
     // Init library
@@ -150,6 +154,9 @@ static void mainProg1(Endpoint &ep) throw(Error)
     std::cout << "*** PJSUA2 SHUTTING DOWN ***" << std::endl;
 }
 
+/*
+	Json 文件读写
+*/
 static void mainProg2() throw(Error)
 {
     string json_str;
@@ -195,7 +202,9 @@ static void mainProg2() throw(Error)
     }
 }
 
-
+/*
+	音频回环
+*/
 static void mainProg3(Endpoint &ep) throw(Error)
 {
     const char *paths[] = { "../../../../tests/pjsua/wavs/input.16.wav",
@@ -239,7 +248,9 @@ static void mainProg3(Endpoint &ep) throw(Error)
     }
 }
 
-
+/*
+	Json 输入与输出
+*/
 static void mainProg() throw(Error)
 {
     string json_str;
@@ -291,7 +302,9 @@ static void mainProg() throw(Error)
     }
 }
 
-
+/*
+	添加账户
+*/
 static void mainProg4(Endpoint &ep) throw(Error)
 {
     // Init library
