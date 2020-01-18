@@ -81,7 +81,41 @@
 
 ### 开源的
 
+- [https://github.com/webrtc/samples](https://yq.aliyun.com/go/articleRenderRedirect?spm=a2c4e.11153940.0.0.75b66f10OM0EBe&url=https%3A%2F%2Fgithub.com%2Fwebrtc%2Fsamples)
 
+对应的demo在这里（Chrome打开可以看效果）：
+
+- [https://webrtc.github.io/samples](https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Fwebrtc.github.io%2Fsamples)
+
+回退一级，还有更多资源：
+
+- [https://github.com/webrtc](https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Fgithub.com%2Fwebrtc)
+
+还有一个，SimpleWebRTC：
+
+- [https://github.com/andyet/SimpleWebRTC](https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Fgithub.com%2Fandyet%2FSimpleWebRTC)
+
+还有：
+
+- [https://github.com/mgechev/angular-webrtc](https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Fgithub.com%2Fmgechev%2Fangular-webrtc)
+
+嗯，接下来这个更赞，支持多人视频会议，开源的：
+
+- [https://github.com/jitsi](https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Fgithub.com%2Fjitsi)，对应的演示地址[https://meet.jit.si/](https://yq.aliyun.com/go/articleRenderRedirect?spm=a2c4e.11153940.0.0.75b66f10OM0EBe&url=https%3A%2F%2Fmeet.jit.si%2F)
+
+世界上第一个基于[HTML5](https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Flib.csdn.net%2Fbase%2Fhtml5)的SIP客户端：[https://www.doubango.org/sipml5/](https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Fwww.doubango.org%2Fsipml5%2F)。他们的GitHub主页：[https://github.com/DoubangoTelecom/doubango](https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Fgithub.com%2FDoubangoTelecom%2Fdoubango)。
+
+# 在线演示
+
+搜集了一些在线演示的示例：
+
+- [https://apprtc.appspot.com](https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Fapprtc.appspot.com%2F)
+- [http://www.simpl.info/getusermedia](https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fwww.simpl.info%2Fgetusermedia)
+- [https://webrtc.github.io/samples](https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Fwebrtc.github.io%2Fsamples)
+- [http://webcamtoy.com/app/](https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fwebcamtoy.com%2Fapp%2F)
+- [http://www.shinydemos.com/facekat/](https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fwww.shinydemos.com%2Ffacekat%2F)
+- [http://idevelop.ro/ascii-camera/](https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fidevelop.ro%2Fascii-camera%2F)
+- [https://meet.jit.si/](https://yq.aliyun.com/go/articleRenderRedirect?url=https%3A%2F%2Fmeet.jit.si%2F)，多人的视频会议
 
 
 
